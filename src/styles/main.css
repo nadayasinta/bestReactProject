@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
 .menu {
   margin-top: 0px;
@@ -60,8 +59,7 @@ h1 {
 }
 .contain .traits {
   margin: 0px;
-=======
-
+}
 .zodiacdaily .zodiacdaily2 {
   height: 600px;
 }
@@ -70,7 +68,7 @@ h1 {
 }
 .zodiacdaily .link:hover {
   color: green;
-=======
+}
 .sign-in-content form {
   padding: 100px;
 }
@@ -95,11 +93,14 @@ h1 {
   padding: 50px;
 }
 .profile-page {
-  padding: 50px;
+  padding: 200px;
 }
 .profile-page h1 {
   margin-bottom: 40px;
 }
 .profile-page .profile-image {
   margin-bottom: 20px;
+}
+.home {
+  padding-top: 150px;
 }

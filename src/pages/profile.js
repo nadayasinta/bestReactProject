@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-// import Header from "../component/Header";
+import Header from "../components/header";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 import Avatar from "../images/man.png";
@@ -16,40 +16,42 @@ const Profile = props => {
         return <Redirect to={{ pathname: "/Signin" }} />;
     } else {
         return (
-            <div className="content profile-page">
-                {/* <Header /> */}
-                <div className="row justify-content-center ">
-                    <div className="col-md-6 text-center">
-                        <h1
-                            style={{ textAlign: "center" }}
-                            className="animated fadeInLeftBig"
-                        >
-                            Welcome, {full_name}
-                        </h1>
-                        <img
-                            src={Avatar}
-                            className="profile-image animated fadeInLeftBig"
-                            width="256px"
-                            height="256px"
-                        />
-                        <p>
-                            <label className="animated fadeInLeftBig">
-                                Username
-                            </label>
-                            <br />
-                            <label className="animated fadeInLeftBig">
-                                {username}
-                            </label>
-                        </p>
-                        <p>
-                            <label className="animated fadeInLeftBig">
-                                Email
-                            </label>
-                            <br />
-                            <label className="animated fadeInLeftBig">
-                                {email}
-                            </label>
-                        </p>
+            <div>
+                <Header />
+                <div className="content profile-page">
+                    <div className="row justify-content-center ">
+                        <div className="col-md-6 text-center">
+                            <h1
+                                style={{ textAlign: "center" }}
+                                className="animated fadeInLeftBig"
+                            >
+                                Welcome, {full_name}
+                            </h1>
+                            <img
+                                src={Avatar}
+                                className="profile-image animated fadeInLeftBig"
+                                width="256px"
+                                height="256px"
+                            />
+                            <p>
+                                <label className="animated fadeInLeftBig">
+                                    Username
+                                </label>
+                                <br />
+                                <label className="animated fadeInLeftBig">
+                                    {username}
+                                </label>
+                            </p>
+                            <p>
+                                <label className="animated fadeInLeftBig">
+                                    Email
+                                </label>
+                                <br />
+                                <label className="animated fadeInLeftBig">
+                                    {email}
+                                </label>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
