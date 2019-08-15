@@ -1,4 +1,67 @@
 
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+.menu {
+  margin-top: 0px;
+  padding-top: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.menu li {
+  display: inline;
+}
+.menu a {
+  font-family: "Muli", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #395c6b;
+  margin: 15px;
+}
+.menu a:hover {
+  color: #80a4ed;
+}
+header {
+  background-color: #e6e1c5;
+  height: 42px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+h1 {
+  margin: 0px;
+}
+.jumbo {
+  background-color: #395c6b;
+  height: 90px;
+  width: 100%;
+}
+.title {
+  color: white;
+  text-align: center;
+  padding-top: 22px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.wrapper {
+  padding-top: 150px;
+}
+.contain {
+  background-color: #f4f0d9;
+  color: #395c6b;
+  height: 100%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.contain h2 {
+  padding-top: 10px;
+}
+.contain h5 {
+  margin-top: 0px;
+}
+.contain .traits {
+  margin: 0px;
+=======
+
 .zodiacdaily .zodiacdaily2 {
   height: 600px;
 }
@@ -39,5 +102,4 @@
 }
 .profile-page .profile-image {
   margin-bottom: 20px;
-
 }
