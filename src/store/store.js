@@ -27,7 +27,8 @@ const intialState = {
         Capricorn,
         Aquarius,
         Pisces
-    ]
+    ],
+    listDailyZodiac: []
 };
 
 export const store = createStore(intialState);
@@ -35,6 +36,10 @@ export const store = createStore(intialState);
 export const actions = store => ({
     setlistzodiac(state, newlist) {
         return { listzodiac: newlist };
+    },
+    setListDailyZodiac(state, input) {
+        console.log("list daily zodiac", state.listDailyZodiac);
+        return { listDailyZodiac: input };
     }
     // setTopNews(state, newnews) {
     //     return { topNews: newnews };

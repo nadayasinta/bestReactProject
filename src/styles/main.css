@@ -1,6 +1,9 @@
 .zodiacdaily .zodiacdaily2 {
-  height: 500px;
+  height: 600px;
 }
 .zodiacdaily .imgzodiacdaily {
   width: 200px;
+}
+.zodiacdaily .link:hover {
+  color: green;
 }
