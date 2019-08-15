@@ -63,11 +63,34 @@ class ZodiacDetails extends React.Component {
     return (
       <div>
         <Header />
-        <div>
+        <div className="wrapper">
           {this.state.listZodiac
             .filter(zodiac => zodiac.name === this.props.match.params.zodiac)
             .map(zodiac => {
-              return zodiac.name;
+              return (
+                <div className="container">
+                  <div className="row justify-content-center">
+                    <div className="col-md-12 contain">
+                      <h2>{zodiac.name}</h2>
+                      <h3>
+                        {zodiac.sun_dates[0] + " - " + zodiac.sun_dates[1]}
+                      </h3>
+                      <h4>Famous People:</h4>
+                      <h5 className="famous">
+                        {zodiac.famous_people.slice(0, 5) + " "}
+                      </h5>
+                      <h4>Good Traits:</h4>
+                      {zodiac.good_traits.map(trait => {
+                        return (
+                          <div className="traits">
+                            <h5>{trait}</h5>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
             })}
         </div>
       </div>

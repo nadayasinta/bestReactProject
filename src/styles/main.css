@@ -41,3 +41,24 @@ h1 {
   font-family: "Lato", sans-serif;
   font-weight: 400;
 }
+.wrapper {
+  padding-top: 120px;
+}
+.contain {
+  background-color: #d4cb92;
+  color: #395c6b;
+  height: 100%;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-family: "Lato", sans-serif;
+}
+.contain h2 {
+  padding-top: 10px;
+}
+.contain h5 {
+  margin-top: -10px;
+}
+.contain .traits {
+  margin: 0px;
+}
