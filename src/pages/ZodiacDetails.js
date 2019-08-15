@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 import Header from "../components/header";
+import ZodiacMatch from "./match";
 
 const baseUrl = "https://zodiacal.herokuapp.com/api";
 
@@ -12,28 +13,8 @@ class ZodiacDetails extends React.Component {
     super(props);
     this.state = {
       listZodiac: []
-      // this.props.listZodiac.filter(zodiac => zodiac.name === "Aries")
     };
   }
-
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (prevProps.match.params.category !== this.props.match.params.category) {
-  //     const self = this;
-  //     axios
-  //       .get(
-  //         baseUrl +
-  //           "sources=" +
-  //           self.props.match.params.category +
-  //           "&apiKey=" +
-  //           apiKey
-  //       )
-  //       .then(function(response) {
-  //         self.props.setListNews(response.data.articles);
-  //         // self.setState({ listNews: response.data.articles });
-  //         console.log(response);
-  //       });
-  //   }
-  // };
 
   componentWillMount = () => {
     const self = this;
@@ -68,30 +49,50 @@ class ZodiacDetails extends React.Component {
             .filter(zodiac => zodiac.name === this.props.match.params.zodiac)
             .map(zodiac => {
               return (
-                <div className="container">
+                <div className="container m-5">
                   <div className="row justify-content-center">
-                    <div className="col-md-12 contain">
-                      <h2>{zodiac.name}</h2>
-                      <h3>
-                        {zodiac.sun_dates[0] + " - " + zodiac.sun_dates[1]}
-                      </h3>
-                      <h4>Famous People:</h4>
-                      <h5 className="famous">
-                        {zodiac.famous_people.slice(0, 5) + " "}
-                      </h5>
-                      <h4>Good Traits:</h4>
-                      {zodiac.good_traits.map(trait => {
-                        return (
-                          <div className="traits">
-                            <h5>{trait}</h5>
+                    <div className="col-md-3 text-right py-3">ini</div>
+                    <div className="col-md-9 contain p-4 border shadow">
+                      <div>
+                        <h2 class="font-weight-bold">
+                          {zodiac.name.toUpperCase()}
+                        </h2>
+                        <h5>
+                          {zodiac.sun_dates[0] + " - " + zodiac.sun_dates[1]}
+                        </h5>
+                        <br />
+                        <h4 class="font-weight-bold">Mental Traits</h4>
+                        <h5>
+                          {zodiac.mental_traits.map(trait => {
+                            return trait + ". ";
+                          })}
+                        </h5>
+                        <br />
+                        <div class="row">
+                          <div class="col-6">
+                            <h4 class="font-weight-bold">Famous People</h4>
+                            <h5 className="famous">
+                              {zodiac.famous_people.slice(0, 5).map(trait => {
+                                return <h5>{trait}</h5>;
+                              })}
+                            </h5>
                           </div>
-                        );
-                      })}
+                          <div class="col-6">
+                            <h4 class="font-weight-bold">Good Traits</h4>
+                            {zodiac.good_traits.map(trait => {
+                              return <h5>{trait.toLowerCase()}</h5>;
+                            })}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               );
             })}
+        </div>
+        <div>
+          <ZodiacMatch />
         </div>
       </div>
     );
