@@ -1,26 +1,33 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { Provider } from "unistore/react";
-import { store } from "./store/store";
-import ZodiacDetails from "./pages/ZodiacDetails";
+
+import logo from "./logo.svg";
 import "./App.css";
 import "./styles/main.css";
+import "./styles/bootstrap.min.css";
+import Home from "./pages/home";
+import { store } from "./store/store";
+import { Provider, connect } from "unistore/react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Signin from "./pages/signin";
+import Profile from "./pages/profile";
+  import ZodiacDetails from "./pages/ZodiacDetails";
+
 
 function App() {
-  return (
-    // <div>tes</div>
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          {/* harus pakai exact path biar tidak ikut terender saat halaman lain dipanggil */}
-          <Route exact path="/:zodiac" component={ZodiacDetails} />
-          {/* <Route exact path="/:category" component={MovieByCategory} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/profile" component={Profile} /> */}
-        </Switch>
-      </Router>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+<Route exact path="/:zodiac" component={ZodiacDetails} />
+                    <Route path="/signin" component={Signin} />
+                    <Route path="/profile" component={Profile} />
+
+                </Switch>
+            </Router>
+        </Provider>
+    );
+
 }
 
 export default App;
