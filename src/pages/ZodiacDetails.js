@@ -63,11 +63,13 @@ class ZodiacDetails extends React.Component {
     return (
       <div>
         <Header />
-        {this.state.listZodiac
-          .filter(zodiac => zodiac.name === this.props.match.params.zodiac)
-          .map(zodiac => {
-            return zodiac.name;
-          })}
+        <div>
+          {this.state.listZodiac
+            .filter(zodiac => zodiac.name === this.props.match.params.zodiac)
+            .map(zodiac => {
+              return zodiac.name;
+            })}
+        </div>
       </div>
     );
   }

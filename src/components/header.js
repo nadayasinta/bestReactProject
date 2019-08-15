@@ -11,14 +11,7 @@ function Header(props) {
       <header>
         <div className="container">
           <div className="row">
-            <div className="col-md-3 col-12 ">
-              <div className="logo">
-                <a href="home.html">
-                  <img src="" alt="" id="logo" width="60px" />
-                </a>
-              </div>
-            </div>
-            <div className="col-md-9">
+            <div className="col-md-12">
               <ul className="menu">
                 <li>
                   <Link to="/">home</Link>
@@ -33,6 +26,15 @@ function Header(props) {
                   <Link to="/">sign out</Link>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="jumbo">
+                <h1 className="title">Astrology Master</h1>
+              </div>
             </div>
           </div>
         </div>

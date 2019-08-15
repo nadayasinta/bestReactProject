@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
 .menu {
-  padding-top: 30px;
+  margin-top: 0px;
+  padding-top: 8px;
+  margin-bottom: 10px;
   text-align: center;
 }
 .menu li {
@@ -10,12 +13,31 @@
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
-  color: #19345e;
-  margin: 10px;
+  color: #395c6b;
+  margin: 15px;
 }
 .menu a:hover {
-  color: #f47522;
+  color: #80a4ed;
 }
-.category li {
-  display: inline;
+header {
+  background-color: #e6e1c5;
+  height: 40px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+h1 {
+  margin: 0px;
+}
+.jumbo {
+  background-color: #395c6b;
+  height: 90px;
+  margin: 0px;
+}
+.title {
+  color: white;
+  text-align: center;
+  padding-top: 22px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
