@@ -14,7 +14,7 @@ import Aquarius from "../images/aquarius.png";
 import Pisces from "../images/pisces.png";
 
 const intialState = {
-    listzodiac: [],
+    listZodiac: [],
     listimage: [
         Aries,
         Taurus,
@@ -41,8 +41,8 @@ const intialState = {
 export const store = createStore(intialState);
 
 export const actions = store => ({
-    setlistzodiac(state, newlist) {
-        return { listzodiac: newlist };
+    setListZodiac(state, ZodiacInput) {
+        return { listZodiac: ZodiacInput };
     },
     setListDailyZodiac(state, input) {
         console.log("list daily zodiac", state.listDailyZodiac);
@@ -68,5 +68,4 @@ export const actions = store => ({
     logOut(state) {
         return { isLogin: false };
     }
-
 });
