@@ -22,5 +22,11 @@
   padding: 50px;
 }
 .profile-page {
-  padding: 100px;
+  padding: 50px;
+}
+.profile-page h1 {
+  margin-bottom: 40px;
+}
+.profile-page .profile-image {
+  margin-bottom: 20px;
 }

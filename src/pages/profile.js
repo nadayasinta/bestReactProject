@@ -9,9 +9,10 @@ const Profile = props => {
     const is_login = props.isLogin;
     const username = props.username;
     const email = props.email;
-    console.log("username", username);
+    const full_name = props.full_name;
+    console.log("name", full_name);
 
-    if (false) {
+    if (!is_login) {
         return <Redirect to={{ pathname: "/Signin" }} />;
     } else {
         return (
@@ -19,18 +20,35 @@ const Profile = props => {
                 {/* <Header /> */}
                 <div className="row justify-content-center ">
                     <div className="col-md-6 text-center">
-                        <h1 style={{ textAlign: "center" }}>Profile</h1>
+                        <h1
+                            style={{ textAlign: "center" }}
+                            className="animated fadeInLeftBig"
+                        >
+                            Welcome, {full_name}
+                        </h1>
                         <img
                             src={Avatar}
-                            className="profile-image"
+                            className="profile-image animated fadeInLeftBig"
                             width="256px"
                             height="256px"
                         />
                         <p>
-                            <label>Username:</label> {username}
+                            <label className="animated fadeInLeftBig">
+                                Username
+                            </label>
+                            <br />
+                            <label className="animated fadeInLeftBig">
+                                {username}
+                            </label>
                         </p>
                         <p>
-                            <label>Email:</label> {email}
+                            <label className="animated fadeInLeftBig">
+                                Email
+                            </label>
+                            <br />
+                            <label className="animated fadeInLeftBig">
+                                {email}
+                            </label>
                         </p>
                     </div>
                 </div>
@@ -40,6 +58,6 @@ const Profile = props => {
 };
 
 export default connect(
-    "username, password, isLogin, email",
+    "username, password, isLogin, email, full_name",
     actions
 )(Profile);
