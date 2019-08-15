@@ -4,6 +4,7 @@ import ZodiacDaily from "../components/zodiacdaily";
 import { Redirect, Link } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
+import Header from "../components/header";
 
 // const url = "https://zodiacal.herokuapp.com/api";
 const url = "http://sandipbgt.com/theastrologer/api/horoscope/";
@@ -105,39 +106,49 @@ class Home extends React.Component {
         }
         console.log("daily", this.state.listDailyZodiac);
         return (
-            <div class="container">
-                <div class="row ">
-                    {this.state.listDailyZodiac.map((item, index) => {
-                        return (
-                            <div className="col-4">
-                                <Link
-                                    to={
-                                        "/" +
-                                        this.state.listZodiac[index]
-                                            .charAt(0)
-                                            .toUpperCase() +
-                                        this.state.listZodiac[index].slice(1)
-                                    }
-                                    style={{
-                                        textDecoration: "none",
-                                        color: "black"
-                                        // linkStyle
-                                    }}
-                                    className="link"
-                                    // onMouseEnter={this.toggleHover}
-                                    // onMouseLeave={this.toggleHover}
-                                >
-                                    <ZodiacDaily
-                                        daily={item.slice(0, item.length - 59)}
-                                        zodiac={this.state.listZodiac[
-                                            index
-                                        ].toUpperCase()}
-                                        dailyimage={this.props.listimage[index]}
-                                    />
-                                </Link>
-                            </div>
-                        );
-                    })}
+            <div>
+                <Header />
+                <div class="container home">
+                    <div class="row ">
+                        {this.state.listDailyZodiac.map((item, index) => {
+                            return (
+                                <div className="col-4">
+                                    <Link
+                                        to={
+                                            "/" +
+                                            this.state.listZodiac[index]
+                                                .charAt(0)
+                                                .toUpperCase() +
+                                            this.state.listZodiac[index].slice(
+                                                1
+                                            )
+                                        }
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black"
+                                            // linkStyle
+                                        }}
+                                        className="link"
+                                        // onMouseEnter={this.toggleHover}
+                                        // onMouseLeave={this.toggleHover}
+                                    >
+                                        <ZodiacDaily
+                                            daily={item.slice(
+                                                0,
+                                                item.length - 59
+                                            )}
+                                            zodiac={this.state.listZodiac[
+                                                index
+                                            ].toUpperCase()}
+                                            dailyimage={
+                                                this.props.listimage[index]
+                                            }
+                                        />
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         );

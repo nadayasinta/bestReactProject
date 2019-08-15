@@ -10,8 +10,7 @@ import { Provider, connect } from "unistore/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signin from "./pages/signin";
 import Profile from "./pages/profile";
-  import ZodiacDetails from "./pages/ZodiacDetails";
-
+import ZodiacDetails from "./pages/ZodiacDetails";
 
 function App() {
     return (
@@ -19,15 +18,13 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
-<Route exact path="/:zodiac" component={ZodiacDetails} />
-                    <Route path="/signin" component={Signin} />
-                    <Route path="/profile" component={Profile} />
-
+                    <Route exact path="/profile" component={Profile} />
+                    <Route exact path="/signin" component={Signin} />
+                    <Route path="/:zodiac" component={ZodiacDetails} />
                 </Switch>
             </Router>
         </Provider>
     );
-
 }
 
 export default App;
