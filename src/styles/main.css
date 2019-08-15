@@ -1,3 +1,4 @@
+
 .zodiacdaily .zodiacdaily2 {
   height: 600px;
 }
@@ -6,4 +7,37 @@
 }
 .zodiacdaily .link:hover {
   color: green;
+=======
+.sign-in-content form {
+  padding: 100px;
+}
+.sign-in-content form h4 {
+  padding: 10px;
+  float: right;
+  color: #b6244f;
+}
+.sign-in-content form label {
+  float: left;
+  color: #904e55;
+}
+.sign-in-content form input {
+  padding: 10px;
+}
+.sign-in-content form button {
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.sign-in-content .right-pic {
+  padding: 50px;
+}
+.profile-page {
+  padding: 50px;
+}
+.profile-page h1 {
+  margin-bottom: 40px;
+}
+.profile-page .profile-image {
+  margin-bottom: 20px;
+
 }
