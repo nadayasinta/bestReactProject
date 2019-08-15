@@ -4,9 +4,9 @@ function ZodiacDaily(props) {
     return (
         <div className="zodiacdaily">
             <div className="row justify-content-center shadow border mx-1 my-4 py-4 zodiacdaily2">
-                <div className="col-12 text-center">
+                <div className="col-12 text-center p-4">
                     <img
-                        className="imgzodiacdaily"
+                        className="imgzodiacdaily w-100"
                         src={props.dailyimage}
                         alt="logo"
                     />
