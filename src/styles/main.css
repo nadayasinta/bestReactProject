@@ -1,3 +1,13 @@
+
+.zodiacdaily .zodiacdaily2 {
+  height: 600px;
+}
+.zodiacdaily .imgzodiacdaily {
+  width: 200px;
+}
+.zodiacdaily .link:hover {
+  color: green;
+=======
 .sign-in-content form {
   padding: 100px;
 }
@@ -29,4 +39,5 @@
 }
 .profile-page .profile-image {
   margin-bottom: 20px;
+
 }
