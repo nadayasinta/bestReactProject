@@ -4,6 +4,8 @@ import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 // import Category from "./Category";
 // import SearchField from "react-search-field";
+import { connect } from "unistore/react";
+import { actions } from "../store/store";
 
 function Header(props) {
     return (
@@ -22,18 +24,24 @@ function Header(props) {
                                 <Link to="/signin">sign in</Link>
                             </li>
                             <li>
-                                <Link to="/">sign out</Link>
+
+                                <Link to="/" onClick={() => props.logOut()}>
+                                    sign out
+                                </Link>
+
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div className="container-fluid ">
                 <div className="row p-0">
                     <div className="col-md-12 p-0">
                         <div className="jumbo text-center shadow py-2">
                             <img src={logo} alt="" class="logo" />
                             <h2 className="title">ASTROLOGY MASTER </h2>
+
                         </div>
                     </div>
                 </div>
@@ -42,4 +50,7 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default connect(
+    "isLogin",
+    actions
+)(Header);

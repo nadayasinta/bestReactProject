@@ -49,6 +49,7 @@ h1 {
 }
 .wrapper {
   padding-top: 150px;
+  margin: auto;
 }
 .contain {
   background-color: #f4f0d9;
