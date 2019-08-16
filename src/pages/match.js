@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const baseUrl = "https://zodiacal.herokuapp.com/api";
+const boredUrl = "http://www.boredapi.com/api/activity/";
 
 class ZodiacMatch extends React.Component {
     constructor(props) {
@@ -30,17 +31,49 @@ class ZodiacMatch extends React.Component {
 
     handleClick = event => {
         event.preventDefault();
+        const self = this;
+        axios
+            .get(boredUrl)
+            .then(function(response) {
+                const zodiac = self.state.zodiacAll.filter(
+                    zodiac => zodiac.name === self.state.zodiacA
+                );
+                let comp = zodiac[0].compatibility;
 
-        const zodiac = this.state.zodiacAll.filter(
-            zodiac => zodiac.name === this.state.zodiacA
-        );
-        let comp = zodiac[0].compatibility;
-        console.log("comp", comp);
-        if (comp.includes(this.state.zodiacB)) {
-            this.setState({ match: "YES" });
-        } else {
-            this.setState({ match: "NO" });
-        }
+                if (comp.includes(self.state.zodiacB)) {
+                    self.setState({
+                        match: "YES",
+                        recommendation: response.data.activity + " together"
+                    });
+                    console.log("activity", response.data.activity);
+                    // self.setState({ match: "YES", lastWord: " together" });
+                } else {
+                    self.setState({
+                        match: "NO",
+                        recommendation: response.data.activity + " alone"
+                    });
+                    console.log("activity", self.state.recommendation);
+                    // self.setState({ match: "NO", lastWord: " alone" });
+                }
+
+                // self.setState({ recommendation: response.data.activity });
+                // console.log("activity", response.data.activity);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+        // const zodiac = this.state.zodiacAll.filter(
+        //     zodiac => zodiac.name === this.state.zodiacA
+        // );
+
+        // let comp = zodiac[0].compatibility;
+
+        // if (comp.includes(this.state.zodiacB)) {
+        //     this.setState({ match: "YES" });
+        // } else {
+        //     this.setState({ match: "NO" });
+        // }
     };
 
     componentDidMount = () => {
@@ -116,6 +149,10 @@ class ZodiacMatch extends React.Component {
                         </button>
                     </form>
                     <h1>HASIL: {this.state.match}</h1>
+                    <h2>
+                        {this.state.recommendation}
+                        {this.state.lastWord}
+                    </h2>
                 </div>
             </div>
         );
