@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 import Header from "../components/header";
-import ZodiacMatch from "./match";
 
 const baseUrl = "https://zodiacal.herokuapp.com/api";
 
@@ -12,7 +11,22 @@ class ZodiacDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listZodiac: []
+            listZodiac: [],
+
+            listimage: [
+                "Aries",
+                "Taurus",
+                "Gemini",
+                "Cancer",
+                "Leo",
+                "Virgo",
+                "Libra",
+                "Scorpio",
+                "Sagittarius",
+                "Capricorn",
+                "Aquarius",
+                "Pisces"
+            ]
         };
     }
 
@@ -21,12 +35,9 @@ class ZodiacDetails extends React.Component {
         axios
             .get(baseUrl)
             .then(function(response) {
-                // self.props.setListZodiac(response.data);
                 self.setState({ listZodiac: response.data });
 
-                // self.setState({ listNews: response.data.articles });
                 console.log(response.data[0]);
-                // console.log(self.props.listZodiac);
                 console.log(self.state.listZodiac);
             })
             // Handle Error
@@ -37,14 +48,12 @@ class ZodiacDetails extends React.Component {
 
     render() {
         console.log(this.state.listZodiac);
+        console.log(this.props.listimage);
 
-        // if (this.props.isLogin === null) {
-        //   return <Redirect to={{ pathname: "/signin" }} />;
-        // } else {
         return (
             <div>
                 <Header />
-                <div className="wrapper">
+                <div className="wrapper ">
                     {this.state.listZodiac
                         .filter(
                             zodiac =>
@@ -52,12 +61,22 @@ class ZodiacDetails extends React.Component {
                         )
                         .map(zodiac => {
                             return (
-                                <div className="container m-5">
-                                    <div className="row justify-content-center">
-                                        <div className="col-md-3 text-right py-3">
-                                            ini
+                                <div className="container m-5 zodiacdetails">
+                                    <div className="row justify-content-center text-center">
+                                        <div className="col-md-3 col-sm-12 text-right py-3">
+                                            <img
+                                                src={
+                                                    this.props.listimage[
+                                                        this.state.listimage.indexOf(
+                                                            this.props.match
+                                                                .params.zodiac
+                                                        )
+                                                    ]
+                                                }
+                                                width="100%"
+                                            />
                                         </div>
-                                        <div className="col-md-9 contain p-4 border shadow">
+                                        <div className="col-md-9 col-sm-12 contain p-4 border shadow">
                                             <div>
                                                 <h2 class="font-weight-bold">
                                                     {zodiac.name.toUpperCase()}
@@ -128,6 +147,6 @@ class ZodiacDetails extends React.Component {
 
 // export default BlogByCategory;
 export default connect(
-    "listZodiac",
+    "listZodiac, listimage",
     actions
 )(ZodiacDetails);
