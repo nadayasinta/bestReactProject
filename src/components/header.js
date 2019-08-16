@@ -13,9 +13,7 @@ function Header(props) {
                     <div className="col-md-12">
                         <ul className="menu">
                             <li>
-                                <Link to="/" class="h2">
-                                    home
-                                </Link>
+                                <Link to="/">home</Link>
                             </li>
                             <li>
                                 <Link to="/profile">profile</Link>

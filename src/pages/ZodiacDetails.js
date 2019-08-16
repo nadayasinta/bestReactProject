@@ -128,6 +128,6 @@ class ZodiacDetails extends React.Component {
 
 // export default BlogByCategory;
 export default connect(
-    "listZodiac",
+    "listZodiac,listimage",
     actions
 )(ZodiacDetails);
