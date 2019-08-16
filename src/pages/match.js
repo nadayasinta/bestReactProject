@@ -46,34 +46,17 @@ class ZodiacMatch extends React.Component {
                         recommendation: response.data.activity + " together"
                     });
                     console.log("activity", response.data.activity);
-                    // self.setState({ match: "YES", lastWord: " together" });
                 } else {
                     self.setState({
                         match: "NO",
                         recommendation: response.data.activity + " alone"
                     });
                     console.log("activity", self.state.recommendation);
-                    // self.setState({ match: "NO", lastWord: " alone" });
                 }
-
-                // self.setState({ recommendation: response.data.activity });
-                // console.log("activity", response.data.activity);
             })
             .catch(function(error) {
                 console.log(error);
             });
-
-        // const zodiac = this.state.zodiacAll.filter(
-        //     zodiac => zodiac.name === this.state.zodiacA
-        // );
-
-        // let comp = zodiac[0].compatibility;
-
-        // if (comp.includes(this.state.zodiacB)) {
-        //     this.setState({ match: "YES" });
-        // } else {
-        //     this.setState({ match: "NO" });
-        // }
     };
 
     componentDidMount = () => {
