@@ -112,7 +112,7 @@ class Home extends React.Component {
                     <div class="row ">
                         {this.state.listDailyZodiac.map((item, index) => {
                             return (
-                                <div className="col-4">
+                                <div className="col-md-4 col-sm-12">
                                     <Link
                                         to={
                                             "/" +
