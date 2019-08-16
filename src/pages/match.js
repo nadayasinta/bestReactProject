@@ -167,13 +167,15 @@ class ZodiacMatch extends React.Component {
                                 alt=""
                             />
 
-                            <h1 class=" text-center font-weight-bold my-4">
+                            <h1 class=" text-center font-weight-bold my-4 ">
                                 {this.state.match}
                             </h1>
                         </div>
 
                         <div class="col-12">
-                            <h4 class=" text-center">{this.state.matchtext}</h4>
+                            <h4 class=" text-center text-secondary">
+                                {this.state.matchtext}
+                            </h4>
                             <h2 class=" text-center ">
                                 {this.state.recommendation}
                                 {this.state.lastWord}

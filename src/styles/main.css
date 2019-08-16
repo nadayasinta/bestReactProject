@@ -17,8 +17,8 @@
   text-decoration: none;
   font-size: 14px;
   color: #395c6b;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .menu a:hover {
   color: #80a4ed;
@@ -76,25 +76,11 @@ h1 {
 .zodiacdaily .link:hover {
   color: green;
 }
-.sign-in-content form {
-  padding: 100px;
-}
 .sign-in-content form h4 {
-  padding: 10px;
-  float: right;
   color: #b6244f;
 }
 .sign-in-content form label {
-  float: left;
   color: #904e55;
-}
-.sign-in-content form input {
-  padding: 10px;
-}
-.sign-in-content form button {
-  padding: 10px;
-  margin-top: 10px;
-  margin-right: 5px;
 }
 .sign-in-content .right-pic {
   padding: 50px;
@@ -124,8 +110,11 @@ h1 {
   color: red;
 }
 .match_page {
-  padding-top: 150px;
+  padding-top: 40px;
 }
 .match_page .imagematch:hover {
   transform: scale(1.1);
+}
+.not-found {
+  margin-top: 200px;
 }
