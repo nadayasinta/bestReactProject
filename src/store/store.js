@@ -30,7 +30,7 @@ const intialState = {
         Pisces
     ],
     listDailyZodiac: [],
-   is_login: false,
+    is_login: false,
     username: "",
     password: "",
     full_name: "",
