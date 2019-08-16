@@ -3,8 +3,11 @@
   padding-top: 8px;
   margin-bottom: 10px;
   text-align: center;
+  list-style-type: none;
 }
 .menu li {
+  margin: 0;
+  padding: 0;
   display: inline;
 }
 .menu a {
@@ -18,7 +21,7 @@
   color: #80a4ed;
 }
 header {
-  background-color: #e6e1c5;
+  background-color: #fbf1d6;
   height: 42px;
   position: fixed;
   z-index: 10;
@@ -28,18 +31,24 @@ h1 {
   margin: 0px;
 }
 .jumbo {
-  background-color: #395c6b;
-  height: 90px;
+  background-color: #1f4050;
+  padding: 0px;
   width: 100%;
+}
+.jumbo .logo {
+  height: 75px;
 }
 .title {
   color: white;
   text-align: center;
+
   padding-top: 22px;
+
   font-weight: 400;
 }
 .wrapper {
   padding-top: 150px;
+  margin: auto;
 }
 .contain {
   background-color: #f4f0d9;
@@ -57,7 +66,7 @@ h1 {
   margin: 0px;
 }
 .zodiacdaily .zodiacdaily2 {
-  height: 600px;
+  height: 800px;
 }
 .zodiacdaily .imgzodiacdaily {
   width: 200px;
@@ -98,7 +107,19 @@ h1 {
   margin-bottom: 20px;
 }
 .home {
-  padding-top: 150px;
+  padding-top: 200px;
+}
+.home .link:link {
+  color: red;
+}
+.home .link:visited {
+  color: blue;
+}
+.home .link:hover {
+  color: red;
+}
+.home .link:active {
+  color: red;
 }
 .match_page {
   padding-top: 150px;
