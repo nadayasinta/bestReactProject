@@ -3,26 +3,29 @@
   padding-top: 8px;
   margin-bottom: 10px;
   text-align: center;
-  list-style-type: none;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menu li {
   margin: 0;
-  padding: 0;
-  display: inline;
+  padding: 5;
+  display: table-cell;
 }
 .menu a {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
   color: #395c6b;
-  margin: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .menu a:hover {
   color: #80a4ed;
 }
 header {
   background-color: #fbf1d6;
-  height: 42px;
+  height: 50px;
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -41,14 +44,13 @@ h1 {
 .title {
   color: white;
   text-align: center;
-
   padding-top: 22px;
-
   font-weight: 400;
 }
-.wrapper {
-  padding-top: 150px;
-  margin: auto;
+.zodiacdetails {
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .contain {
   background-color: #f4f0d9;
@@ -98,7 +100,7 @@ h1 {
   padding: 50px;
 }
 .profile-page {
-  padding: 200px;
+  padding: 40px;
 }
 .profile-page h1 {
   margin-bottom: 40px;
@@ -107,7 +109,7 @@ h1 {
   margin-bottom: 20px;
 }
 .home {
-  padding-top: 200px;
+  padding-top: 40px;
 }
 .home .link:link {
   color: red;

@@ -59,7 +59,7 @@ class ZodiacDetails extends React.Component {
                     )
                     .map(zodiac => {
                         return (
-                            <div className="container m-0 zodiacdetails wrapper">
+                            <div className="container px-0 zodiacdetails">
                                 <div className="row justify-content-center text-center">
                                     <div className="col-md-3 col-sm-12 py-3">
                                         <img
@@ -136,7 +136,6 @@ class ZodiacDetails extends React.Component {
 
 // export default BlogByCategory;
 export default connect(
-
     "listZodiac, listimage",
     actions
 )(ZodiacDetails);
