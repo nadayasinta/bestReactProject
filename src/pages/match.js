@@ -1,5 +1,8 @@
 import React from "react";
 import axios from "axios";
+import Header from "../components/header";
+import heart from "../images/heart.png";
+import heart2 from "../images/heart2.png";
 
 const baseUrl = "https://zodiacal.herokuapp.com/api";
 const boredUrl = "http://www.boredapi.com/api/activity/";
@@ -13,7 +16,9 @@ class ZodiacMatch extends React.Component {
             zodiacAll: [],
             zodiacCompability: [],
             match: "",
-            recommendation: ""
+            recommendation: "",
+            imagematch: "",
+            matchtext: ""
         };
     }
 
@@ -43,13 +48,17 @@ class ZodiacMatch extends React.Component {
                 if (comp.includes(self.state.zodiacB)) {
                     self.setState({
                         match: "YES",
-                        recommendation: response.data.activity + " together"
+                        recommendation: response.data.activity + " together",
+                        imagematch: heart,
+                        matchtext: "Something you can do with your partner"
                     });
                     console.log("activity", response.data.activity);
                 } else {
                     self.setState({
                         match: "NO",
-                        recommendation: response.data.activity + " alone"
+                        recommendation: response.data.activity,
+                        imagematch: heart2,
+                        matchtext: "Something you can do to cheer yourself"
                     });
                     console.log("activity", self.state.recommendation);
                 }
@@ -74,11 +83,16 @@ class ZodiacMatch extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <form>
-                        <div className="col-12">
-                            <label for="zodiac1">Your Zodiac</label>
+            <div>
+                <Header />
+                <div className="container match_page">
+                    <div className="row my-4 justify-content-center">
+                        <h1 class=" text-center font-weight-bold">
+                            MATCH CALCULATOR
+                        </h1>
+                    </div>
+                    <form className="row">
+                        <div className="col-4">
                             <select
                                 className="browser-default custom-select"
                                 onChange={this.handleChange}
@@ -98,9 +112,23 @@ class ZodiacMatch extends React.Component {
                                 <option value="Aquarius">Aquarius</option>
                                 <option value="Pisces">Pisces</option>
                             </select>
+                            <label
+                                for="zodiac1"
+                                class="text-secondary text-center"
+                            >
+                                Your Zodiac
+                            </label>
                         </div>
-                        <div className=" col-12">
-                            <label for="zodiac2">Your Partner's Zodiac</label>
+                        <div className=" col-4 align-self-start">
+                            <button
+                                type="submit"
+                                className="btn btn-danger btn-block"
+                                onClick={this.handleClick}
+                            >
+                                Check
+                            </button>
+                        </div>
+                        <div className=" col-4 text-right">
                             <select
                                 className="browser-default custom-select"
                                 onChange={this.handleChangeTwo}
@@ -122,20 +150,36 @@ class ZodiacMatch extends React.Component {
                                 <option value="Aquarius">Aquarius</option>
                                 <option value="Pisces">Pisces</option>
                             </select>
+                            <label
+                                for="zodiac2"
+                                class="text-secondary text-center"
+                            >
+                                Your Partner's Zodiac
+                            </label>
                         </div>
-                        <button
-                            type="submit"
-                            className="btn btn-primary col-3"
-                            onClick={this.handleClick}
-                        >
-                            Check
-                        </button>
                     </form>
-                    <h1>HASIL: {this.state.match}</h1>
-                    <h2>
-                        {this.state.recommendation}
-                        {this.state.lastWord}
-                    </h2>
+                    <div class="row border  justify-content-center my-5 mx-2  py-3 shadow">
+                        <div class="col-12 text-center ">
+                            <h2 class=" text-center">MATCH RESULT</h2>
+                            <img
+                                class="  w-50 p-2 imagematch "
+                                src={this.state.imagematch}
+                                alt=""
+                            />
+
+                            <h1 class=" text-center font-weight-bold my-4">
+                                {this.state.match}
+                            </h1>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 class=" text-center">{this.state.matchtext}</h4>
+                            <h2 class=" text-center ">
+                                {this.state.recommendation}
+                                {this.state.lastWord}
+                            </h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

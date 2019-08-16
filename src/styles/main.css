@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
 .menu {
   margin-top: 0px;
   padding-top: 8px;
@@ -9,7 +8,6 @@
   display: inline;
 }
 .menu a {
-  font-family: "Muli", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
@@ -38,7 +36,6 @@ h1 {
   color: white;
   text-align: center;
   padding-top: 22px;
-  font-family: "Lato", sans-serif;
   font-weight: 400;
 }
 .wrapper {
@@ -49,7 +46,6 @@ h1 {
   color: #395c6b;
   height: 100%;
   text-align: center;
-  font-family: "Lato", sans-serif;
 }
 .contain h2 {
   padding-top: 10px;
@@ -103,4 +99,10 @@ h1 {
 }
 .home {
   padding-top: 150px;
+}
+.match_page {
+  padding-top: 150px;
+}
+.match_page .imagematch:hover {
+  transform: scale(1.1);
 }
