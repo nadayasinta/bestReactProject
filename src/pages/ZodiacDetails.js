@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 import Header from "../components/header";
@@ -36,9 +35,6 @@ class ZodiacDetails extends React.Component {
             .get(baseUrl)
             .then(function(response) {
                 self.setState({ listZodiac: response.data });
-
-                console.log(response.data[0]);
-                console.log(self.state.listZodiac);
             })
             // Handle Error
             .catch(function(error) {
@@ -47,9 +43,6 @@ class ZodiacDetails extends React.Component {
     };
 
     render() {
-        console.log(this.state.listZodiac);
-        console.log(this.props.listimage);
-
         return (
             <div>
                 <Header />

@@ -25,13 +25,11 @@ class ZodiacMatch extends React.Component {
     handleChange = event => {
         event.preventDefault();
         this.setState({ zodiacA: event.target.value });
-        // console.log(this.state.zodiacA);
     };
 
     handleChangeTwo = event => {
         event.preventDefault();
         this.setState({ zodiacB: event.target.value });
-        // console.log(this.state.zodiacA);
     };
 
     handleClick = event => {

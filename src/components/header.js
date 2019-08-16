@@ -1,9 +1,6 @@
 import React from "react";
-// import "./HeaderNews.css";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
-// import Category from "./Category";
-// import SearchField from "react-search-field";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 

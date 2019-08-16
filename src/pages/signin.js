@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "../component/Header";
 import { connect } from "unistore/react";
 import { actions } from "../store/store";
 import Swal from "sweetalert2";
@@ -8,7 +7,6 @@ export class Signin extends React.Component {
     doLogin = () => {
         this.props.postLogin().then(() => {
             console.log("this", this);
-            // Swal.fire("Good job!", "You have been signed in!", "success");
             const Toast = Swal.mixin({
                 toast: true,
                 position: "top",
