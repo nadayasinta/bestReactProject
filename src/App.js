@@ -1,5 +1,4 @@
 import React from "react";
-
 import logo from "./logo.svg";
 import "./App.css";
 import "./styles/main.css";
@@ -11,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signin from "./pages/signin";
 import Profile from "./pages/profile";
 import ZodiacDetails from "./pages/ZodiacDetails";
+import ZodiacMatch from "./pages/match";
 
 function App() {
     return (
@@ -20,6 +20,7 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/signin" component={Signin} />
+                    <Route exact path="/test" component={ZodiacMatch} />
                     <Route path="/:zodiac" component={ZodiacDetails} />
                 </Switch>
             </Router>
