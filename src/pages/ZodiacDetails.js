@@ -60,7 +60,7 @@ class ZodiacDetails extends React.Component {
                     .map(zodiac => {
                         return (
                             <div className="container m-0 zodiacdetails wrapper">
-                                <div className="row justify-content-center text-center">
+                                <div className="row justify-content-center text-center justify-align-center text-align-center">
                                     <div className="col-md-3 col-sm-12 py-3">
                                         <img
                                             src={
@@ -71,7 +71,7 @@ class ZodiacDetails extends React.Component {
                                                     )
                                                 ]
                                             }
-                                            class="w-100"
+                                            class="imagedetail w-100"
                                         />
                                     </div>
                                     <div className="col-md-9 col-sm-12 contain p-4 border shadow">
